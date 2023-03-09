@@ -23,27 +23,34 @@ const HeroesList = (props) => {
     }, []);
 
     useEffect(() => {
-        if (localStorage.getItem('inputValue')) {
-            setFilteredChars(JSON.parse(localStorage.getItem('filterData')));
+        if (localStorage.getItem('filterData')) {
+            const localChars = JSON.parse(localStorage.getItem('filterData'));
+            filterChars(localChars);
+            setFilteredChars(localChars);
         }
     }, [])
 
-    useEffect(() => {
-        console.log(filteredChars)
-        if (filteredChars.length > 0) {
-            filterChars(filteredChars);
-        }
+    // useEffect(() => {
+    //     if (filteredChars.length > 0) {
+    //         filterChars(filteredChars);
+    //     }
         
-    }, [filteredChars])
+    // }, [filteredChars])
 
     useEffect(() => {
+        
         const copyChars = JSON.parse(JSON.stringify(loadedChars));
+        console.log(copyChars);
         setFilteredChars(() => filterChars(copyChars));
 
-        saveToLocalStorage(filteredChars);
+        if (filteredChars.length > 0) {
+            saveToLocalStorage(filteredChars);
+        }
+        
     }, [input]);
 
     const filterChars = (data) => {
+        console.log(data)
         if (!input) {
             setIsFilterActive(false);
             return [];
