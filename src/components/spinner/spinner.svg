@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin: auto; background: none; display: block; shape-rendering: auto;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+<g transform="translate(85,50)">
+<g transform="rotate(0)">
+<circle cx="0" cy="0" r="6" fill="#10bc27" fill-opacity="1">
+  <animateTransform attributeName="transform" type="scale" begin="-1.5645371577574967s" values="1.23 1.23;1 1" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite"></animateTransform>
+  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite" values="1;0" begin="-1.5645371577574967s"></animate>
+</circle>
+</g>
+</g><g transform="translate(80.99096089786235,66.2653110215319)">
+<g transform="rotate(27.69230769230769)">
+<circle cx="0" cy="0" r="6" fill="#10bc27" fill-opacity="0.9230769230769231">
+  <animateTransform attributeName="transform" type="scale" begin="-1.4341590612777053s" values="1.23 1.23;1 1" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite"></animateTransform>
+  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite" values="1;0" begin="-1.4341590612777053s"></animate>
+</circle>
+</g>
+</g><g transform="translate(69.88226613559046,78.80443530627798)">
+<g transform="rotate(55.38461538461538)">
+<circle cx="0" cy="0" r="6" fill="#10bc27" fill-opacity="0.8461538461538461">
+  <animateTransform attributeName="transform" type="scale" begin="-1.303780964797914s" values="1.23 1.23;1 1" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite"></animateTransform>
+  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite" values="1;0" begin="-1.303780964797914s"></animate>
+</circle>
+</g>
+</g><g transform="translate(54.21878380893631,84.74481059343188)">
+<g transform="rotate(83.0769230769231)">
+<circle cx="0" cy="0" r="6" fill="#10bc27" fill-opacity="0.7692307692307693">
+  <animateTransform attributeName="transform" type="scale" begin="-1.1734028683181226s" values="1.23 1.23;1 1" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite"></animateTransform>
+  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite" values="1;0" begin="-1.1734028683181226s"></animate>
+</circle>
+</g>
+</g><g transform="translate(37.58882895351126,82.72556849398953)">
+<g transform="rotate(110.76923076923076)">
+<circle cx="0" cy="0" r="6" fill="#10bc27" fill-opacity="0.6923076923076923">
+  <animateTransform attributeName="transform" type="scale" begin="-1.0430247718383312s" values="1.23 1.23;1 1" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite"></animateTransform>
+  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite" values="1;0" begin="-1.0430247718383312s"></animate>
+</circle>
+</g>
+</g><g transform="translate(23.80212381401146,73.20929303842783)">
+<g transform="rotate(138.46153846153848)">
+<circle cx="0" cy="0" r="6" fill="#10bc27" fill-opacity="0.6153846153846154">
+  <animateTransform attributeName="transform" type="scale" begin="-0.9126466753585398s" values="1.23 1.23;1 1" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite"></animateTransform>
+  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite" values="1;0" begin="-0.9126466753585398s"></animate>
+</circle>
+</g>
+</g><g transform="translate(16.01703639008818,58.37604825006452)">
+<g transform="rotate(166.1538461538462)">
+<circle cx="0" cy="0" r="6" fill="#10bc27" fill-opacity="0.5384615384615384">
+  <animateTransform attributeName="transform" type="scale" begin="-0.7822685788787483s" values="1.23 1.23;1 1" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite"></animateTransform>
+  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite" values="1;0" begin="-0.7822685788787483s"></animate>
+</circle>
+</g>
+</g><g transform="translate(16.017036390088172,41.623951749935486)">
+<g transform="rotate(193.84615384615384)">
+<circle cx="0" cy="0" r="6" fill="#10bc27" fill-opacity="0.46153846153846156">
+  <animateTransform attributeName="transform" type="scale" begin="-0.651890482398957s" values="1.23 1.23;1 1" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite"></animateTransform>
+  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite" values="1;0" begin="-0.651890482398957s"></animate>
+</circle>
+</g>
+</g><g transform="translate(23.802123814011455,26.790706961572177)">
+<g transform="rotate(221.53846153846152)">
+<circle cx="0" cy="0" r="6" fill="#10bc27" fill-opacity="0.38461538461538464">
+  <animateTransform attributeName="transform" type="scale" begin="-0.5215123859191656s" values="1.23 1.23;1 1" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite"></animateTransform>
+  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite" values="1;0" begin="-0.5215123859191656s"></animate>
+</circle>
+</g>
+</g><g transform="translate(37.58882895351124,17.274431506010487)">
+<g transform="rotate(249.23076923076923)">
+<circle cx="0" cy="0" r="6" fill="#10bc27" fill-opacity="0.3076923076923077">
+  <animateTransform attributeName="transform" type="scale" begin="-0.39113428943937417s" values="1.23 1.23;1 1" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite"></animateTransform>
+  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite" values="1;0" begin="-0.39113428943937417s"></animate>
+</circle>
+</g>
+</g><g transform="translate(54.21878380893631,15.255189406568114)">
+<g transform="rotate(276.92307692307696)">
+<circle cx="0" cy="0" r="6" fill="#10bc27" fill-opacity="0.23076923076923078">
+  <animateTransform attributeName="transform" type="scale" begin="-0.2607561929595828s" values="1.23 1.23;1 1" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite"></animateTransform>
+  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite" values="1;0" begin="-0.2607561929595828s"></animate>
+</circle>
+</g>
+</g><g transform="translate(69.88226613559041,21.195564693722005)">
+<g transform="rotate(304.6153846153846)">
+<circle cx="0" cy="0" r="6" fill="#10bc27" fill-opacity="0.15384615384615385">
+  <animateTransform attributeName="transform" type="scale" begin="-0.1303780964797914s" values="1.23 1.23;1 1" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite"></animateTransform>
+  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite" values="1;0" begin="-0.1303780964797914s"></animate>
+</circle>
+</g>
+</g><g transform="translate(80.99096089786235,33.73468897846811)">
+<g transform="rotate(332.3076923076924)">
+<circle cx="0" cy="0" r="6" fill="#10bc27" fill-opacity="0.07692307692307693">
+  <animateTransform attributeName="transform" type="scale" begin="0s" values="1.23 1.23;1 1" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite"></animateTransform>
+  <animate attributeName="fill-opacity" keyTimes="0;1" dur="1.6949152542372883s" repeatCount="indefinite" values="1;0" begin="0s"></animate>
+</circle>
+</g>
+</g>
+<!-- [ldio] generated by https://loading.io/ --></svg>
