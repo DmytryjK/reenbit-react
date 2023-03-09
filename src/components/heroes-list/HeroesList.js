@@ -7,9 +7,9 @@ import './heroesList.scss';
 const HeroesList = () => {
     const [loadedChars, setloadedChars] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-
-    const {getCharacters} = apiService();
     
+    const {getCharacters} = apiService();
+
     useEffect(() => {
         getCharacters()
             .then(data => {
@@ -37,7 +37,7 @@ const HeroesList = () => {
     }
 
     const renderedCharList = isLoading ? <Spinner/> : charList(loadedChars);
-    
+
     return (
         <section className="heroes">
             <div className="container">

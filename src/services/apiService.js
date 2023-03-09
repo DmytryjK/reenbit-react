@@ -3,12 +3,21 @@ const apiService = () => {
 
     const getCharacters = async () => {
         const result = await fetch(_apiKey).then(res => res.json());
-        return result.results.map(char => _transformCharacter(char));
+        const sortedResult = await sortData(result.results);
+        return sortedResult.map(char => _transformCharacter(char));
     }
 
     const getCharacter = async (id) => {
         const result = await fetch(`${_apiKey}/${id}`).then(res => res.json());
         return _transformCharacter(result.results);
+    }
+
+    const sortData = (data) => {
+        return data.sort((a, b) => {
+            if (a.name < b.name) {
+              return -1
+            }
+        });
     }
 
     const _transformCharacter = (char) => {
