@@ -1,14 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import apiService from '../../services/apiService';
 
 import Spinner from '../spinner/Spinner';
 import './heroesList.scss';
 
-const HeroesList = () => {
+const HeroesList = (props) => {
     const [loadedChars, setloadedChars] = useState([]);
+    const [filteredChars, setFilteredChars] = useState([]);
+    const [isFilterActive, setIsFilterActive] = useState(false);
+
     const [isLoading, setIsLoading] = useState(true);
-    
     const {getCharacters} = apiService();
+
+    const {input} = props;
 
     useEffect(() => {
         getCharacters()
@@ -17,6 +21,41 @@ const HeroesList = () => {
                 setIsLoading(false);
             });
     }, []);
+
+    useEffect(() => {
+        if (localStorage.getItem('inputValue')) {
+            setFilteredChars(JSON.parse(localStorage.getItem('filterData')));
+        }
+    }, [])
+
+    useEffect(() => {
+        console.log(filteredChars)
+        if (filteredChars.length > 0) {
+            filterChars(filteredChars);
+        }
+        
+    }, [filteredChars])
+
+    useEffect(() => {
+        const copyChars = JSON.parse(JSON.stringify(loadedChars));
+        setFilteredChars(() => filterChars(copyChars));
+
+        saveToLocalStorage(filteredChars);
+    }, [input]);
+
+    const filterChars = (data) => {
+        if (!input) {
+            setIsFilterActive(false);
+            return [];
+        } else {
+            setIsFilterActive(true);
+            return data.filter(item => item.name.toUpperCase().indexOf(input.toUpperCase()) >= 0);
+        }
+    }
+
+    const saveToLocalStorage = (filterData) => {
+        localStorage.setItem('filterData', `${JSON.stringify(filterData)}`);
+    }
 
     const charList = (data) => {
         const renderedItems = data.map(char => {
@@ -36,7 +75,15 @@ const HeroesList = () => {
         return renderedItems;
     }
 
-    const renderedCharList = isLoading ? <Spinner/> : charList(loadedChars);
+    let renderedCharList;
+
+    if (isLoading) {
+        renderedCharList = <Spinner/>
+    } else if (!isLoading && !isFilterActive) {
+        renderedCharList = charList(loadedChars);
+    } else if (!isLoading && isFilterActive) {
+        renderedCharList = charList(filteredChars);
+    }
 
     return (
         <section className="heroes">
