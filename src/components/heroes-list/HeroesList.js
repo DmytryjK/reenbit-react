@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import apiService from '../../services/apiService';
 
 import Spinner from '../spinner/Spinner';
@@ -9,7 +9,6 @@ const HeroesList = ({input}) => {
     const [filteredChars, setFilteredChars] = useState([]);
 
     const [isLocalStor, setIsLocalStore] = useState(false);
-    const [isFilterActive, setIsFilterActive] = useState(false);
 
     const [isLoading, setIsLoading] = useState(true);
 
@@ -24,30 +23,23 @@ const HeroesList = ({input}) => {
     }, []);
 
     useEffect(() => {
-        const copyChars = JSON.parse(JSON.stringify(loadedChars));
-        const filtersResult = filterChars(copyChars);
-        setFilteredChars(() => filtersResult);
-
-        // if (input) {
-        //     saveToLocalStorage(filtersResult);
-        // }
-        console.log(input)
-        saveToLocalStorage(filtersResult);
-        
-    }, [input]);
-
-    useEffect(() => {
 
         if (localStorage.getItem('filterData') !== 'undefined' && localStorage.getItem('filterData')) {
             const localChars = JSON.parse(localStorage.getItem('filterData'));
-            setIsLocalStore(true);
             setFilteredChars(() => localChars);
+            setIsLocalStore(true);
         }
 
     }, []);
+    
+    useEffect(() => {
+        const copyChars = [...loadedChars];
+        const filtersResult = filterChars(copyChars);
+        setFilteredChars(() => filtersResult);
+        saveToLocalStorage(filtersResult);
+    }, [input, loadedChars]);
 
     const filterChars = (data) => {
-        setIsFilterActive(true);
         return data.filter(item => item.name.toUpperCase().indexOf(input.toUpperCase()) >= 0);
     }
 
@@ -74,17 +66,14 @@ const HeroesList = ({input}) => {
     }
 
     let renderedCharList;
-
-    renderedCharList = charList(loadedChars);
-
     if (isLoading) {
         renderedCharList = <Spinner/>;
     } else if (!isLoading && input) {
-        console.log('tyt')
         renderedCharList = charList(filteredChars);
     } else if (!isLoading && !input) {
         renderedCharList = charList(loadedChars);
     } 
+    
 
     return (
         <section className="heroes">

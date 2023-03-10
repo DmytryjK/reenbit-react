@@ -8,7 +8,7 @@ const SearchForm = ({ onChange, setInputValue }) => {
 
     const [input, setInput] = useState('');
 
-    useState(() => {
+    useEffect(() => {
         if (localStorage.getItem('inputValue')) {
             setInput(localStorage.getItem('inputValue'));
             setInputValue(() => localStorage.getItem('inputValue'));
@@ -21,6 +21,7 @@ const SearchForm = ({ onChange, setInputValue }) => {
         localStorage.setItem('inputValue', `${inputValue}`);
         setInput(inputValue);
     }
+
 
     return (
         <section className="search">

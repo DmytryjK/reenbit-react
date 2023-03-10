@@ -14,7 +14,7 @@ const MainPage = () => {
     return (
         <>
             <Header/>
-            <SearchForm onChange={changeInputValue} setInputValue={() => setInputValue}/>
+            <SearchForm onChange={changeInputValue} setInputValue={setInputValue}/>
             <HeroesList input={inputValue}/>
         </>
     )
