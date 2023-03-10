@@ -5,7 +5,7 @@ import apiService from '../../services/apiService';
 import Spinner from '../spinner/Spinner';
 import './heroesList.scss';
 
-const HeroesList = ({input}) => {
+const HeroesList = ({ input, charId }) => {
     const [loadedChars, setloadedChars] = useState([]);
     const [filteredChars, setFilteredChars] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -49,7 +49,7 @@ const HeroesList = ({input}) => {
             const {id, name, specie, img} = char;
             return (
                 <li key={id} className="list__item">
-                    <Link to="/hero">
+                    <Link to="/hero" onClick={() => charId(id)}>
                         <div className="list__img">
                             <img width="240" height="188" src={img} alt={name} />
                         </div>

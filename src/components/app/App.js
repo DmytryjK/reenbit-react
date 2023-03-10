@@ -1,27 +1,33 @@
 import { createBrowserRouter, RouterProvider  } from 'react-router-dom';
+import { useState } from 'react';
 import {HeroPage, MainPage, ErrorPage} from "../pages";
 
-const router = createBrowserRouter([
-	{
-	  path: "/",
-	  element: <MainPage/>,
-	},
-	{
-		path: "/hero",
-		element: <HeroPage/>,
-	  },
-]);
+const App = () => {
+	const [charId, setCharId] = useState(null);
+	
+	const currentCharId = (id) => {
+		setCharId(id);
+	}
 
-function App() {
+	const router = createBrowserRouter([
+		{
+		  path: "/",
+		  element: <MainPage charId={currentCharId}/>,
+		},
+		{
+			path: "/hero",
+			element: <HeroPage charId={charId}/>,
+		  },
+	]);
 
 	return (
-		<div className="App">
-			<RouterProvider router={router}>
-				<MainPage/>
-				<HeroPage/>
-				<ErrorPage/>
-			</RouterProvider>
-		</div>
+		<RouterProvider className="App" router={router}>
+			<div className="App">
+				{/* <MainPage prop={test}/>
+				<HeroPage prop={test}/>
+				<ErrorPage/> */}
+			</div>
+		</RouterProvider>
 	);
 }
 

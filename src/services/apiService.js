@@ -9,7 +9,7 @@ const apiService = () => {
 
     const getCharacter = async (id) => {
         const result = await fetch(`${_apiKey}/${id}`).then(res => res.json());
-        return _transformCharacter(result.results);
+        return _transformCharacter(result);
     }
 
     const sortData = (data) => {

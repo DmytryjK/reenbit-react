@@ -4,9 +4,9 @@ import Header from '../header/Header';
 import SearchForm from '../searchForm/SearchForm';
 import HeroesList from '../heroes-list/HeroesList';
 
-const MainPage = () => {
+const MainPage = ({charId}) => {
     const [inputValue, setInputValue] = useState('');
-
+    
     const changeInputValue = (inputValue) => {
         setInputValue(inputValue);
     }
@@ -15,7 +15,7 @@ const MainPage = () => {
         <>
             <Header/>
             <SearchForm onChange={changeInputValue} setInputValue={setInputValue}/>
-            <HeroesList input={inputValue}/>
+            <HeroesList input={inputValue} charId={charId}/>
         </>
     )
 }
