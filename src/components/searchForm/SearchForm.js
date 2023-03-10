@@ -1,23 +1,25 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import searchIcon from '../../resources/searchIcon.svg';
 import './searchForm.scss';
 
-const SearchForm = (props) => {
-    const {input, setInput} = props;
+const SearchForm = ({ onChange, setInputValue }) => {
     const renderedInput = document.getElementsByClassName('search__input');
 
-    useEffect(() => {
+    const [input, setInput] = useState('');
+
+    useState(() => {
         if (localStorage.getItem('inputValue')) {
             setInput(localStorage.getItem('inputValue'));
+            setInputValue(() => localStorage.getItem('inputValue'));
         }
-    }, [])
+    }, []);
 
     const changeInputValue = (event) => {
         const inputValue = event.target.value;
-
-        setInput(inputValue);
+        onChange(inputValue);
         localStorage.setItem('inputValue', `${inputValue}`);
+        setInput(inputValue);
     }
 
     return (
