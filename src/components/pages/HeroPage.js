@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom';
 import avatar from '../../resources/avatar.png';
 import './heroPage.scss';
 
 const HeroPage = () => {
     return (
         <section className="hero">
-            <a className="hero__back-link" href="/">Go back</a>
+            <Link to="/" className="hero__back-link">Go back</Link>
             <div className="container-hero">
                 <img className="hero__avatar" src={avatar} alt="hero avatar" width="300" height="300"/>
                 <h2 className="hero__title">Rick Sanchez</h2>

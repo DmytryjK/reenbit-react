@@ -4,8 +4,6 @@ import searchIcon from '../../resources/searchIcon.svg';
 import './searchForm.scss';
 
 const SearchForm = ({ onChange, setInputValue }) => {
-    const renderedInput = document.getElementsByClassName('search__input');
-
     const [input, setInput] = useState('');
 
     useEffect(() => {

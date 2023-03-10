@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import apiService from '../../services/apiService';
 
 import Spinner from '../spinner/Spinner';
@@ -7,9 +8,6 @@ import './heroesList.scss';
 const HeroesList = ({input}) => {
     const [loadedChars, setloadedChars] = useState([]);
     const [filteredChars, setFilteredChars] = useState([]);
-
-    const [isLocalStor, setIsLocalStore] = useState(false);
-
     const [isLoading, setIsLoading] = useState(true);
 
     const {getCharacters} = apiService();
@@ -27,7 +25,6 @@ const HeroesList = ({input}) => {
         if (localStorage.getItem('filterData') !== 'undefined' && localStorage.getItem('filterData')) {
             const localChars = JSON.parse(localStorage.getItem('filterData'));
             setFilteredChars(() => localChars);
-            setIsLocalStore(true);
         }
 
     }, []);
@@ -52,13 +49,15 @@ const HeroesList = ({input}) => {
             const {id, name, specie, img} = char;
             return (
                 <li key={id} className="list__item">
-                    <div className="list__img">
-                        <img width="240" height="188" src={img} alt={name} />
-                    </div>
-                    <div className="list__text">
-                        <h2 className="list__title">{name}</h2>
-                        <p className="list__subtitle">{specie}</p>
-                    </div>
+                    <Link to="/hero">
+                        <div className="list__img">
+                            <img width="240" height="188" src={img} alt={name} />
+                        </div>
+                        <div className="list__text">
+                            <h2 className="list__title">{name}</h2>
+                            <p className="list__subtitle">{specie}</p>
+                        </div>
+                    </Link>
                 </li>
             )
         })

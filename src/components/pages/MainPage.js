@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import Header from '../header/Header';
 import SearchForm from '../searchForm/SearchForm';
