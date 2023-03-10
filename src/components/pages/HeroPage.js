@@ -1,13 +1,25 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+import Spinner from '../spinner/Spinner';
 import apiService from '../../services/apiService';
 import './heroPage.scss';
 
 const HeroPage = ({ charId }) => {
     const [loadedChar, setLoadedChar] = useState({});
+    const [loading, setLoading] = useState(true);
 
     const {getCharacter} = apiService();
+
+    useEffect(() => {
+        if (charId) {
+            setLoading(true);
+            getCharacter(charId).then(data => {
+                setLoadedChar(data);
+                setLoading(false);
+            });
+        }
+    }, []);
 
     useEffect(() => {
         if (localStorage.getItem('loadCharById') && (typeof(JSON.parse(localStorage.getItem('loadCharById'))) === 'object')) {
@@ -15,11 +27,7 @@ const HeroPage = ({ charId }) => {
         }
     }, []);
 
-    useEffect(() => {
-        if (charId) {
-            getCharacter(charId).then(setLoadedChar);
-        }
-    }, []);
+    
 
     useEffect(() => {
         localStorage.setItem('loadCharById', JSON.stringify(loadedChar));
@@ -30,7 +38,7 @@ const HeroPage = ({ charId }) => {
     return (
         <section className="hero">
             <Link to="/" className="hero__back-link">Go back</Link>
-            <div className="container-hero">
+            {loading ? <Spinner/> : <div className="container-hero">
                 <img className="hero__avatar" src={img} alt="hero avatar" width="300" height="300"/>
                 <h2 className="hero__title">{name}</h2>
                 <p className="hero__subtitle">Informations</p>
@@ -56,7 +64,7 @@ const HeroPage = ({ charId }) => {
                         <p className="info-list__descr">{type}</p>
                     </li>
                 </ul>
-            </div>
+            </div>}
         </section>
     )
 }

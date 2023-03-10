@@ -13,6 +13,7 @@ const HeroesList = ({ input, charId }) => {
     const {getCharacters} = apiService();
 
     useEffect(() => {
+        setIsLoading(true);
         getCharacters()
             .then(data => {
                 setloadedChars(data);
@@ -65,20 +66,18 @@ const HeroesList = ({ input, charId }) => {
     }
 
     let renderedCharList;
-    if (isLoading) {
-        renderedCharList = <Spinner/>;
-    } else if (!isLoading && input) {
+
+    if (!isLoading && input) {
         renderedCharList = charList(filteredChars);
     } else if (!isLoading && !input) {
         renderedCharList = charList(loadedChars);
     } 
     
-
     return (
         <section className="heroes">
             <div className="container">
                 <ul className="heroes__list list">
-                    {renderedCharList}
+                    {isLoading ? <Spinner/> : renderedCharList}
                 </ul>
             </div>
         </section>
