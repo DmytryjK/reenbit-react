@@ -15,13 +15,13 @@ const App = () => {
 		  element: <MainPage charId={currentCharId}/>,
 		},
 		{
-			path: "/hero",
+			path: `hero/:${charId}`,
 			element: <HeroPage charId={charId}/>,
-		  },
+		},
 	]);
 
 	return (
-		<RouterProvider className="App" router={router}>
+		<RouterProvider router={router}>
 			<div className="App">
 				{/* <MainPage prop={test}/>
 				<HeroPage prop={test}/>

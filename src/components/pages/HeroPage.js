@@ -7,7 +7,7 @@ import './heroPage.scss';
 
 const HeroPage = ({ charId }) => {
     const [loadedChar, setLoadedChar] = useState({});
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
 
     const {getCharacter} = apiService();
 

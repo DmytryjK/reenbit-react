@@ -50,7 +50,7 @@ const HeroesList = ({ input, charId }) => {
             const {id, name, specie, img} = char;
             return (
                 <li key={id} className="list__item">
-                    <Link to="/hero" onClick={() => charId(id)}>
+                    <Link to={`hero/id:${id}`} onClick={() => charId(id)}>
                         <div className="list__img">
                             <img width="240" height="188" src={img} alt={name} />
                         </div>
