@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import Spinner from '../spinner/Spinner';
@@ -8,17 +8,21 @@ import './heroPage.scss';
 const HeroPage = ({ charId }) => {
     const [loadedChar, setLoadedChar] = useState({});
     const [loading, setLoading] = useState(false);
+    const idFromUrl = useParams().id;
 
     const {getCharacter} = apiService();
+    
+    const loadingChars = (id) => {
+        setLoading(true);
+        getCharacter(id).then(data => {
+            setLoadedChar(data);
+            setLoading(false);
+        });
+    }
 
     useEffect(() => {
-        if (charId) {
-            setLoading(true);
-            getCharacter(charId).then(data => {
-                setLoadedChar(data);
-                setLoading(false);
-            });
-        }
+        if (charId) loadingChars(charId);
+        if (idFromUrl) loadingChars(idFromUrl);
     }, []);
 
     useEffect(() => {
@@ -26,8 +30,6 @@ const HeroPage = ({ charId }) => {
             setLoadedChar(JSON.parse(localStorage.getItem('loadCharById')));
         }
     }, []);
-
-    
 
     useEffect(() => {
         localStorage.setItem('loadCharById', JSON.stringify(loadedChar));

@@ -15,7 +15,7 @@ const App = () => {
 		  element: <MainPage charId={currentCharId}/>,
 		},
 		{
-			path: `hero/:${charId}`,
+			path: `hero/:id`,
 			element: <HeroPage charId={charId}/>,
 		},
 	]);
