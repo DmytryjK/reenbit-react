@@ -1,4 +1,4 @@
-import { Link, useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import Spinner from '../spinner/Spinner';
@@ -36,7 +36,7 @@ const HeroPage = ({ charId }) => {
         localStorage.setItem('loadCharById', JSON.stringify(loadedChar));
     }, [loadedChar]);
 
-    const {id, name, status, specie, gender, img, origin, type} = loadedChar;
+    const {name, status, specie, gender, img, origin, type} = loadedChar;
 
     return (
         <section className="hero">

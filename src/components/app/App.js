@@ -18,6 +18,11 @@ const App = () => {
 			path: `hero/:id`,
 			element: <HeroPage charId={charId}/>,
 		},
+		{
+			path: `*`,
+			element: <ErrorPage />,
+		},
+		
 
 	]);
 
