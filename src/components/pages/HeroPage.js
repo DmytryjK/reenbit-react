@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import Spinner from '../spinner/Spinner';
@@ -9,6 +9,7 @@ const HeroPage = ({ charId }) => {
     const [loadedChar, setLoadedChar] = useState({});
     const [loading, setLoading] = useState(false);
     const idFromUrl = useParams().id;
+    const navigate = useNavigate();
 
     const {getCharacter} = apiService();
     
@@ -22,7 +23,7 @@ const HeroPage = ({ charId }) => {
 
     useEffect(() => {
         if (charId) loadingChars(charId);
-        if (idFromUrl) loadingChars(idFromUrl);
+        else if (idFromUrl) loadingChars(idFromUrl);
     }, []);
 
     useEffect(() => {
@@ -39,7 +40,7 @@ const HeroPage = ({ charId }) => {
 
     return (
         <section className="hero">
-            <Link to="/" className="hero__back-link">Go back</Link>
+            <button onClick={() => navigate(-1)} className="hero__back-link">Go back</button>
             {loading ? <Spinner/> : <div className="container-hero">
                 <img className="hero__avatar" src={img} alt="hero avatar" width="300" height="300"/>
                 <h2 className="hero__title">{name}</h2>

@@ -18,16 +18,13 @@ const App = () => {
 			path: `hero/:id`,
 			element: <HeroPage charId={charId}/>,
 		},
+
 	]);
 
 	return (
-		<RouterProvider router={router}>
-			<div className="App">
-				{/* <MainPage prop={test}/>
-				<HeroPage prop={test}/>
-				<ErrorPage/> */}
-			</div>
-		</RouterProvider>
+		<div className="App">
+			<RouterProvider router={router}/>
+		</div>
 	);
 }
 

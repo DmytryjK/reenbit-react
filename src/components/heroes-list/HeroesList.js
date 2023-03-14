@@ -13,12 +13,14 @@ const HeroesList = ({ input, charId }) => {
     const {getCharacters} = apiService();
 
     useEffect(() => {
+
         setIsLoading(true);
         getCharacters()
-            .then(data => {
-                setloadedChars(data);
-                setIsLoading(false);
-            });
+        .then(data => {
+            setloadedChars(data);
+            setIsLoading(false);
+        });
+        
     }, []);
 
     useEffect(() => {
