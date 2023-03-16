@@ -1,8 +1,8 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-import Spinner from '../spinner/Spinner';
-import apiService from '../../services/apiService';
+import Spinner from '../../spinner/Spinner';
+import apiService from '../../../services/apiService';
 import './heroPage.scss';
 
 const HeroPage = ({ charId }) => {

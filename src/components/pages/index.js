@@ -1,5 +1,6 @@
-import HeroPage from '../pages/HeroPage';
+import HeroPage from '../pages/heroPage/HeroPage';
 import MainPage from '../pages/MainPage';
-import ErrorPage from '../pages/404';
+import ErrorPage from '../pages/404/404';
+import SignInPage from './signInPage/SignInPage';
 
-export {HeroPage, MainPage, ErrorPage};
+export {HeroPage, MainPage, ErrorPage, SignInPage};

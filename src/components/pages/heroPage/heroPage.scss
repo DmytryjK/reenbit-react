@@ -74,7 +74,6 @@
         padding-left: 28px;
         font-weight: 700;
         font-size: 18px;
-        line-height: 21px;
         background-color: transparent;
         border: none;
         cursor: pointer;
@@ -83,7 +82,7 @@
             content: '';
             position: absolute;
             left: 0;
-            background: url('../../resources/arrow.svg') center center no-repeat;
+            background: url('../../../resources/arrow.svg') center center no-repeat;
             width: 16px;
             height: 16px;
         }

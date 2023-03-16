@@ -1,0 +1,40 @@
+.signIn {
+    .container {
+        position: relative;
+    }
+    &__btn {
+        position: absolute;
+        top: 21px;
+        left: 50px;
+        display: inline-flex;
+        align-items: center;
+        width: 108px;
+        height: 24px;
+        padding-left: 28px;
+        font-weight: 700;
+        font-size: 18px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s ease-in-out color;
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            background: url('../../../resources/arrow.svg') center center no-repeat;
+            width: 16px;
+            height: 16px;
+        }
+        &:hover {
+            color: green;
+        }
+    }
+    &__content {
+        margin-top: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 30px;
+    }
+}

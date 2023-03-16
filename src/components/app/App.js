@@ -1,6 +1,8 @@
-import { createBrowserRouter, RouterProvider  } from 'react-router-dom';
+import { createBrowserRouter, Outlet, RouterProvider  } from 'react-router-dom';
 import { useState } from 'react';
-import {HeroPage, MainPage, ErrorPage} from "../pages";
+import {HeroPage, MainPage, ErrorPage, SignInPage} from "../pages";
+import { AuthContextProvider } from '../../context/AuthContext';
+import Navbar from '../navbar/Navbar';
 
 const App = () => {
 	const [charId, setCharId] = useState(null);
@@ -9,18 +11,36 @@ const App = () => {
 		setCharId(id);
 	}
 
+	const AppLayout = () => {
+		return(
+			<>
+				<Navbar/>
+				<Outlet/>
+			</>
+		)
+	}
+
 	const router = createBrowserRouter([
 		{
-		  path: "/",
-		  element: <MainPage charId={currentCharId}/>,
-		},
-		{
-			path: `hero/:id`,
-			element: <HeroPage charId={charId}/>,
-		},
-		{
-			path: `*`,
-			element: <ErrorPage />,
+			element: <AppLayout/>,
+			children: [
+				{
+					path: "/",
+					element: <MainPage charId={currentCharId}/>,
+				  },
+				  {
+					  path: "hero/:id",
+					  element: <HeroPage charId={charId}/>,
+				  },
+				  {
+					  path: "signIn",
+					  element: <SignInPage/>
+				  },
+				  {
+					  path: "*",
+					  element: <ErrorPage />,
+				  }
+			]
 		},
 		
 
@@ -28,7 +48,9 @@ const App = () => {
 
 	return (
 		<div className="App">
-			<RouterProvider router={router}/>
+			<AuthContextProvider>
+				<RouterProvider router={router}/>
+			</AuthContextProvider>
 		</div>
 	);
 }
